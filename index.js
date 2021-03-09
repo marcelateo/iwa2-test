@@ -14,8 +14,14 @@ app.get('/hello/:foo/:bar', (req, res) => {
     res.json({message: 'Hello BScBest!', data: [
         req.params.foo,
         req.params.bar
-    ]})
+    ]});
 });
+
+app.post('/hello', (req, res) => {
+    res.json({result: 'Post was sent', data: req.body});
+});
+
+
 
 // http.createServer((req, res)=>{
 //   res.write(users.join(", ")); //display the list of users on the page
@@ -40,4 +46,4 @@ let users = []; // names of users will be stored here
 
 app.listen(port, function(err){
     console.log('Listening on port: ' + port);
-})
+});
